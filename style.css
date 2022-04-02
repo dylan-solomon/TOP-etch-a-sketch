@@ -31,23 +31,24 @@ header {
     justify-content: center;
     display: flex;
     flex-direction: column;
-    
 }
 
 .container {
     flex-basis: 70%;
     border: 1px solid black;
     height: 100%;
-    padding: 5rem;
+    padding: 2rem;
 }
 
 .board-container {
     border: 1px solid black;
-    flex: 1 0 auto;
+    height: 700px;
+    width: 700px;
+    display: grid;
 }
 
-.board-container:before {
+/* .board-container:before {
     content: '';
     display: block;
     padding-top: 100%;
-}
+} */
