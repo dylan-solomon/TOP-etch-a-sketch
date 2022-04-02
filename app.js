@@ -1,14 +1,15 @@
 const box = document.querySelector('.board-container');
 
+const resetBtn = document.querySelector('.reset');
 const gridSize = document.getElementById('box-size');
 const size = document.querySelector('.size');
+
 
 
 /* Grid Size Indicator */
 size.textContent = `${gridSize.value} x ${gridSize.value}`;
 
 gridSize.addEventListener('mouseup', () => {
-    size.textContent = `${gridSize.value} x ${gridSize.value}`;
     resetGrid();
     createGrid();
 });
@@ -21,6 +22,7 @@ function createGrid() {
         gridItem.className=`grid-item ${i}`;
         box.appendChild(gridItem);
     };
+    size.textContent = `${gridSize.value} x ${gridSize.value}`;
 };
 
 function resetGrid() {
@@ -28,6 +30,13 @@ function resetGrid() {
         box.removeChild(box.lastChild);
     };
 };
+
+resetBtn.addEventListener('click', () => {
+    resetGrid();
+    gridSize.value = 10;
+    createGrid();
+});
+
 
 createGrid()
 
