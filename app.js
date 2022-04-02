@@ -1,5 +1,5 @@
 const box = document.querySelector('.board-container');
-const gridItem = document.createElement('div');
+
 const gridSize = document.getElementById('box-size');
 const size = document.querySelector('.size');
 
@@ -12,7 +12,9 @@ gridSize.addEventListener('mouseup', () => {size.textContent = `${gridSize.value
 
 
 function createGrid() {
-    for (let i = 0; i <= gridSize.value; i++) {
+    for (let i = 0; i <= (gridSize.value * gridSize.value); i++) {
+        const gridItem = document.createElement('div');
+        gridItem.className=`grid-item ${i}`;
         box.appendChild(gridItem);
     }
 }
